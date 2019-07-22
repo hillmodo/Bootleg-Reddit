@@ -1,0 +1,12 @@
+<h1>I've always wanted to be a bootlegger -</h1>
+
+<input type="text" class="sub-select" placeholder="Enter SubReddit" [(ngModel)]="sub" />
+<button type="submit" class="sub-select" (click)="returnSubreddit(sub)">Retrieve SubReddit</button>
+<div class="reddit-post-body">
+    <div *ngFor="let posts of post; index as i" class="post-contents">
+        <p class="post-title">{{post[i].data.title}}</p>
+        <img src="{{post[i].data.thumbnail}}" alt="reddit-image" /><br />
+        <a href="https://www.reddit.com{{post[i].data.permalink}}">https://www.reddit.com{{post[i].data.permalink}}</a>
+        <div class="votes">UpVote<input type="radio" class="votes" value="upvote" name="UpVote" />DownVote<input type="radio" class="votes" name="downvote" value="downvote"></div>
+    </div>
+</div>
